@@ -3,6 +3,7 @@ require 'jekyll/post'
 require 'rubygems'
 require 'disqussion'
 require 'json'
+require 'date'
 
 module Jekyll
 
@@ -24,6 +25,9 @@ module Jekyll
       cache_file_path = cache_directory + "/" + cache_filename
       disqus_data = nil
 
+      # Set the refresh rate in minutes (how long the program will wait before writing a new file)
+      refresh_rate = settings['refresh_rate'] || 60
+
       #configuration options needed
       limit = settings['limit'] || 5
       ul_class = settings['ul_class'] || ""
@@ -34,8 +38,8 @@ module Jekyll
         Dir.mkdir(cache_directory) 
       end
 
-      # Now lets check for the cache file.
-      if File.exist?(cache_file_path)
+      # Now lets check for the cache file and how old it is
+      if File.exist?(cache_file_path) and ((Time.now - File.mtime(cache_file_path))/60 < refresh_rate)
         disqus_data = JSON.parse(File.read(cache_file_path));
       else
 
