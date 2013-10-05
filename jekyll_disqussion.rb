@@ -56,7 +56,7 @@ module Jekyll
           config.api_secret = api_secret
         end
 
-        disqus_data = Disqussion::Client.posts.list(:forum => forum_name, :limit => 5)
+        disqus_data = Disqussion::Client.posts.list(:related => "thread", :forum => forum_name, :limit => limit)
 
         File.open(cache_file_path,"w") do |f|
           f.write(disqus_data.to_json)
