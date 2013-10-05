@@ -68,9 +68,19 @@ module Jekyll
 
       for response in disqus_data["response"]
         avatar = response["author"]["avatar"]["small"]["permalink"]
+        username = response["author"]["username"]
         message = response["raw_message"]
+        trunk_message = message.split(/\s+/, preview_size+1)[0...preview_size].join(' ') + "..."
+        profile_url = response["author"]["profile_url"]
+        thread_link = response["thread"]["link"]
 
-        output << "<li><p><img class='#{image_class}' src='#{avatar}'></img>#{message}<p></li>\n"
+        output << "<li class='side-bar-recent-post-li'>
+                      <div class='side-bar-recent-post-img'><img src='#{avatar}'></img></div>
+                      <div class='side-bar-recent-post-content'>
+                        <div class='side-bar-recent-post-username'><a href='#{profile_url}'>#{username}</a></div>
+                        <div><a href='#{thread_link}'>#{trunk_message}</a></div>
+                      </div>
+                   </li>\n"
       end
 
       "#{output}\n<ul>"
