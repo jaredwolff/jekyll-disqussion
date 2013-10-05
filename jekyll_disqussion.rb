@@ -32,6 +32,7 @@ module Jekyll
       limit = settings['limit'] || 5
       ul_class = settings['ul_class'] || ""
       image_class = settings['image_class'] || ""
+      preview_size = settings['preview_size'] || 10
 
       # If the directory doesn't exist lets make it
       if not Dir.exist?(cache_directory)
