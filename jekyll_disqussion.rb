@@ -17,7 +17,7 @@ module Jekyll
     def render(context)
 
       site = context.registers[:site]
-      settings = site.config['disqus']
+      settings = site.config['disqus_comments']
 
       # Local cache setup so we don't hit the sever X amount of times for same data.
       cache_directory = settings['cache_directory'] || "_disqus"
