@@ -96,6 +96,7 @@ Here is an example of how i'm styling **disqus\_comments**
     }
 
 The result? See below for yourself!
+
 ![Disquss Comments](disquss_comments.jpg)
 
 #Notes
