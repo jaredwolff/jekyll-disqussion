@@ -66,6 +66,35 @@ Classes include:
 * disqussion-user-name      -- the username of the post
 * disqussion-thread-link    -- the link and description of the post
 
+Here is an example of how i'm styling **disqus\_comments**
+
+    /* Disqussion */
+    
+    .disqussion-ul {
+      list-style: none;
+      width:273px;
+      margin: 0 0 10px 5px;
+    }
+    
+    .disqussion-img {
+      margin: 5px;
+      float: left;
+      width: 50px;
+      height: 50px;
+    }
+    
+    .disqussion-content {
+      margin: 0 0 0 2px;
+      width: 210px;
+      float: right;
+    }
+    
+    .disqussion-li {
+      margin: 2px 0 2px 0;
+      height: 60px;
+      clear:both;
+    }
+
 #Notes
 
 Have an idea to make it better? Feel free to share! (Pull requests are encouraged.)
