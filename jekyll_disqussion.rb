@@ -68,7 +68,7 @@ module Jekyll
 
       for response in disqus_data["response"]
         avatar = response["author"]["avatar"]["small"]["permalink"]
-        username = response["author"]["username"]
+        name = response["author"]["name"]
         message = response["raw_message"]
         trunk_message = message.split(/\s+/, preview_size+1)[0...preview_size].join(' ') + "..."
         profile_url = response["author"]["profile_url"]
@@ -77,7 +77,7 @@ module Jekyll
         output << "<li class='side-bar-recent-post-li'>
                       <div class='side-bar-recent-post-img'><img src='#{avatar}'></img></div>
                       <div class='side-bar-recent-post-content'>
-                        <div class='side-bar-recent-post-username'><a href='#{profile_url}'>#{username}</a></div>
+                        <div class='side-bar-recent-post-username'><a href='#{profile_url}'>#{name}</a></div>
                         <div><a href='#{thread_link}'>#{trunk_message}</a></div>
                       </div>
                    </li>\n"
