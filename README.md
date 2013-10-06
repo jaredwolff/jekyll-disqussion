@@ -1,8 +1,7 @@
 Jekyll Discussion
 ===========
-**by jaredwolff**
 
-The Jeyll Disqussion plugin uses the Ruby Disqus API to retrieve post data from Disqus.
+The Jeyll Disqussion plugin uses the [Ruby Disqus API](https://github.com/jeremyvdw/disqussion) to retrieve post data from Disqus.
 
 # Installation
 
