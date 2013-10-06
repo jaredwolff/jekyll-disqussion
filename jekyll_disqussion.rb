@@ -28,10 +28,10 @@ module Jekyll
       # Set the refresh rate in minutes (how long the program will wait before writing a new file)
       refresh_rate = settings['refresh_rate'] || 60
 
-      #configuration options needed
+      #Configuration options needed
       limit = settings['limit'] || 5
-      ul_class = settings['ul_class'] || ""
-      image_class = settings['image_class'] || ""
+
+      # How many posts do we want to preview?
       preview_size = settings['preview_size'] || 10
 
       # If the directory doesn't exist lets make it
@@ -64,7 +64,7 @@ module Jekyll
       end 
 
       # Output the HTML elements according to the configuration
-      output = "<ul class='#{ul_class}'>"
+      output = "<ul class='disqussion-ul'>"
 
       for response in disqus_data["response"]
         avatar = response["author"]["avatar"]["small"]["permalink"]
@@ -74,11 +74,11 @@ module Jekyll
         profile_url = response["author"]["profile_url"]
         thread_link = response["thread"]["link"]
 
-        output << "<li class='side-bar-recent-post-li'>
-                      <div class='side-bar-recent-post-img'><img src='#{avatar}'></img></div>
-                      <div class='side-bar-recent-post-content'>
-                        <div class='side-bar-recent-post-username'><a href='#{profile_url}'>#{name}</a></div>
-                        <div><a href='#{thread_link}'>#{trunk_message}</a></div>
+        output << "<li class='disqussion-li'>
+                      <div class='disqussion-img'><a href='#{profile_url}'><img src='#{avatar}'></img></a></div>
+                      <div class='disqussion-content'>
+                        <div class='disqussion-user-name'><a href='#{profile_url}'>#{name}</a></div>
+                        <div class='disqussion-thread-link'><a href='#{thread_link}'>#{trunk_message}</a></div>
                       </div>
                    </li>\n"
       end
