@@ -28,7 +28,7 @@ The Jeyll Disqussion plugin uses the Ruby Disqus API to retrieve post data from 
 
 Note: currently this plugin only has one piece of functionality. You can only recieve the latest posts from your forum.
 
-Simply inclue the _{% disqus\_commments %}_ tag where you want the comments.
+Simply include the **{% disqus\_comments %}** tag where you want the comments.
 
     <div class="side-bar-headline">Recent Comments</div>
       {% disqus_comments %}
