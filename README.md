@@ -94,7 +94,7 @@ Here is an example of how i'm styling **disqus\_comments**
       clear:both;
     }
 
-The result? See below for yourself!
+The result? See below for yourself:
 
 ![Disquss Comments](disquss_comments.jpg)
 
