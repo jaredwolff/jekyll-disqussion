@@ -68,7 +68,7 @@ module Jekyll
 
       for response in disqus_data["response"]
         avatar = response["author"]["avatar"]["small"]["permalink"]
-        name = response["author"]["name"]
+        name = response["author"]["name"].split(" ")[0]
         message = response["raw_message"]
         trunk_message = message.split(/\s+/, preview_size+1)[0...preview_size].join(' ') + "..."
         profile_url = response["author"]["profile_url"]
